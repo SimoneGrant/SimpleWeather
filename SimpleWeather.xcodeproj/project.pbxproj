@@ -13,6 +13,9 @@
 		1822D2452029E8420006A9D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1822D2442029E8420006A9D6 /* Assets.xcassets */; };
 		1822D2482029E8420006A9D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1822D2462029E8420006A9D6 /* LaunchScreen.storyboard */; };
 		1822D2532029E8B70006A9D6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822D2522029E8B70006A9D6 /* Weather.swift */; };
+		1822D2562029F1320006A9D6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1822D2552029F1320006A9D6 /* Keys.plist */; };
+		1822D2582029F19B0006A9D6 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822D2572029F19B0006A9D6 /* APIKeys.swift */; };
+		1822D25A2029F2900006A9D6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822D2592029F2900006A9D6 /* API.swift */; };
 		ABFDF354F4B45CA2A5DEB2D3 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11779871B7E61695F4687834 /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		1822D2472029E8420006A9D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1822D2492029E8420006A9D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1822D2522029E8B70006A9D6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1822D2552029F1320006A9D6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		1822D2572029F19B0006A9D6 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		1822D2592029F2900006A9D6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4C7C9885EBCF9D535F0C7C9D /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A3217C5F3AC596F694FDBC /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +51,7 @@
 		1822D2312029E8420006A9D6 = {
 			isa = PBXGroup;
 			children = (
+				1822D2552029F1320006A9D6 /* Keys.plist */,
 				1822D23C2029E8420006A9D6 /* SimpleWeather */,
 				1822D23B2029E8420006A9D6 /* Products */,
 				8361001D916FA7ED4A8FCF28 /* Pods */,
@@ -94,6 +101,7 @@
 				1822D2442029E8420006A9D6 /* Assets.xcassets */,
 				1822D23D2029E8420006A9D6 /* AppDelegate.swift */,
 				1822D2462029E8420006A9D6 /* LaunchScreen.storyboard */,
+				1822D2572029F19B0006A9D6 /* APIKeys.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				1822D2522029E8B70006A9D6 /* Weather.swift */,
+				1822D2592029F2900006A9D6 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1822D2562029F1320006A9D6 /* Keys.plist in Resources */,
 				1822D2482029E8420006A9D6 /* LaunchScreen.storyboard in Resources */,
 				1822D2452029E8420006A9D6 /* Assets.xcassets in Resources */,
 				1822D2432029E8420006A9D6 /* Main.storyboard in Resources */,
@@ -254,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1822D25A2029F2900006A9D6 /* API.swift in Sources */,
 				1822D2402029E8420006A9D6 /* ViewController.swift in Sources */,
 				1822D2532029E8B70006A9D6 /* Weather.swift in Sources */,
+				1822D2582029F19B0006A9D6 /* APIKeys.swift in Sources */,
 				1822D23E2029E8420006A9D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

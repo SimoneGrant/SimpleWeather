@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Weather {
+struct Weather {
     var temperature: Int = 0
     var condition: Int = 0
     var city: String = ""
     var weatherIconName: String = ""
     
-    func getWeatherIcon(weather condition: Int) -> String {
+    func getWeatherIcon(forWeather condition: Int) -> String {
         switch condition {
         case 0...300 :
             return "thunder"
