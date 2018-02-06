@@ -42,4 +42,6 @@ struct Weather {
             return "n_a"
         }
     }
+    
+    
 }

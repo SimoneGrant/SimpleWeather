@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy_day" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-8d-IHB">
-                                <rect key="frame" x="89" y="126" width="196" height="187"/>
+                                <rect key="frame" x="89" y="166" width="196" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="187" id="Sql-76-iLc"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZZ-nS-wk2">
-                                <rect key="frame" x="87.5" y="318" width="199" height="82"/>
+                                <rect key="frame" x="88" y="332" width="199" height="82"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="60"/>
                                 <color key="textColor" red="0.98099881410598755" green="0.54681146144866943" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,10 +53,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O3d-nU-eVq" secondAttribute="bottom" constant="50" id="HhX-J5-Jpx"/>
                             <constraint firstItem="aKH-8d-IHB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="IzA-fT-JmZ"/>
                             <constraint firstItem="xfh-Oh-gGD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="JUU-Kl-Q1M"/>
-                            <constraint firstItem="aKH-8d-IHB" firstAttribute="top" secondItem="xfh-Oh-gGD" secondAttribute="bottom" constant="50" id="N68-Bj-o7W"/>
+                            <constraint firstItem="aKH-8d-IHB" firstAttribute="top" secondItem="xfh-Oh-gGD" secondAttribute="bottom" constant="90" id="N68-Bj-o7W"/>
                             <constraint firstItem="xfh-Oh-gGD" firstAttribute="centerX" secondItem="aKH-8d-IHB" secondAttribute="centerX" id="bJB-uK-KiV"/>
                             <constraint firstItem="O3d-nU-eVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dLx-c4-117"/>
-                            <constraint firstItem="yZZ-nS-wk2" firstAttribute="top" secondItem="aKH-8d-IHB" secondAttribute="bottom" constant="5" id="yKh-gY-z4X"/>
+                            <constraint firstItem="yZZ-nS-wk2" firstAttribute="top" secondItem="aKH-8d-IHB" secondAttribute="bottom" constant="-21" id="yKh-gY-z4X"/>
                             <constraint firstItem="xfh-Oh-gGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zau-Xe-Pbv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
