@@ -113,15 +113,8 @@ extension ViewController: UISearchBarDelegate   {
             userSearchedForNewLocation(searchBar.text!)
             searchBar.text = ""
         }
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-//            loadItems()
-            
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
         }
     }
 }
