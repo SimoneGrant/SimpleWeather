@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,31 +23,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-8d-IHB">
-                                <rect key="frame" x="67" y="151" width="240" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy_day" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-8d-IHB">
+                                <rect key="frame" x="89" y="126" width="196" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="Sql-76-iLc"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZZ-nS-wk2">
-                                <rect key="frame" x="166" y="399" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98°  L 90° H 100°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-nU-eVq">
+                                <rect key="frame" x="138.5" y="600.5" width="97.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-nU-eVq">
-                                <rect key="frame" x="166" y="626" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="xfh-Oh-gGD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="xfh-Oh-gGD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZZ-nS-wk2">
+                                <rect key="frame" x="87.5" y="318" width="199" height="82"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="60"/>
+                                <color key="textColor" red="0.98099881410598755" green="0.54681146144866943" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yZZ-nS-wk2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8r4-b4-H4H"/>
+                            <constraint firstItem="aKH-8d-IHB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HMa-B7-0Uf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O3d-nU-eVq" secondAttribute="bottom" constant="50" id="HhX-J5-Jpx"/>
+                            <constraint firstItem="aKH-8d-IHB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="IzA-fT-JmZ"/>
+                            <constraint firstItem="xfh-Oh-gGD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="JUU-Kl-Q1M"/>
+                            <constraint firstItem="aKH-8d-IHB" firstAttribute="top" secondItem="xfh-Oh-gGD" secondAttribute="bottom" constant="50" id="N68-Bj-o7W"/>
+                            <constraint firstItem="xfh-Oh-gGD" firstAttribute="centerX" secondItem="aKH-8d-IHB" secondAttribute="centerX" id="bJB-uK-KiV"/>
+                            <constraint firstItem="O3d-nU-eVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dLx-c4-117"/>
+                            <constraint firstItem="yZZ-nS-wk2" firstAttribute="top" secondItem="aKH-8d-IHB" secondAttribute="bottom" constant="5" id="yKh-gY-z4X"/>
+                            <constraint firstItem="xfh-Oh-gGD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zau-Xe-Pbv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -57,4 +73,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloudy_day" width="512" height="512"/>
+    </resources>
 </document>
