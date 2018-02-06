@@ -19,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherDetailsLabel: UILabel!
     let locationManager = CLLocationManager()
     var weather = Weather()
-    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "cats & dogs", "snow": "snow", "fog": "haze", "strong_thunder": "thunderbolt", "sunny": "gorgeous", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
+    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "pouring", "snow": "snow", "fog": "haze", "strong_thunder": "thunderbolt", "sunny": "gorgeous", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let tempResult = json["main"]["temp"].double {
             //temp is in kelvins
             weather.temperature = Int(tempResult * 9/5 - 459.67)
+            let low = json["main"]["temp_min"].doubleValue
+            let high = json["main"]["temp_max"].doubleValue
+            weather.low = Int(low * 9/5 - 459.67)
+            weather.high = Int(high * 9/5 - 459.67)
             weather.city = json["name"].stringValue
             weather.condition = json["weather"][0]["id"].intValue
             weather.weatherIconName = weather.getWeatherIcon(forWeather: weather.condition)
@@ -98,7 +102,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateUIWithWeather() {
         weatherIconView.image = UIImage(named: weather.weatherIconName)
-        weatherDetailsLabel.text = "\(weather.temperature)"
+        weatherDetailsLabel.text = "\(weather.temperature)°  L \(weather.low)°  H \(weather.high)°"
         weatherBlurb.text = weatherDict[weather.weatherIconName]
     }
 }
