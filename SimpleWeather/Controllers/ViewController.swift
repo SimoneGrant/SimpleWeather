@@ -104,8 +104,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func updateUIWithWeather() {
         if dayOrNight() == "daytime" {
             weatherIconView.image = UIImage(named: weather.weatherIconName)
-        } else {
-            print("nighttime")
+        } else if weather.weatherIconName == "cloudy_day" {
+            weatherIconView.image = UIImage(named: "cloudy_night")
+        } else if weather.weatherIconName == "fog" {
+            weatherIconView.image = UIImage(named: "fog_night")
+        } else if weather.weatherIconName == "sunny" {
+            weatherIconView.image = UIImage(named: "clear_night")
         }
         weatherDetailsLabel.text = "\(weather.temperature)°  L \(weather.low)°  H \(weather.high)°"
         weatherBlurb.text = weatherDict[weather.weatherIconName]
