@@ -19,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherDetailsLabel: UILabel!
     let locationManager = CLLocationManager()
     var weather = Weather()
-    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "pouring", "snow": "snow", "fog": "haze", "strong_thunder": "thunderbolt", "sunny": "gorgeous", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
+    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "pouring", "snow": "snow", "fog": "foggy", "strong_thunder": "thunderbolt", "sunny": "gorgeous", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         weatherIconView.image = UIImage(named: weather.weatherIconName)
         weatherDetailsLabel.text = "\(weather.temperature)°  L \(weather.low)°  H \(weather.high)°"
         weatherBlurb.text = weatherDict[weather.weatherIconName]
+        
     }
 }
 
