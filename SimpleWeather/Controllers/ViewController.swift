@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import SwiftyJSON
 import Alamofire
+import EDSunriseSet
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -68,7 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("This is the temp result", tempResult)
         } else {
             print("Could not get weather")
-            weatherBlurb.text = "Weather Unavailable"
+            weatherBlurb.text = "Unavailable"
         }
     }
     
@@ -88,7 +89,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        weatherBlurb.text = "Location Unavailable"
+        weatherBlurb.text = "Unavailable"
     }
     
     //MARK: - Change City
@@ -101,10 +102,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - Update UI
     
     func updateUIWithWeather() {
-        weatherIconView.image = UIImage(named: weather.weatherIconName)
+        if dayOrNight() == "daytime" {
+            weatherIconView.image = UIImage(named: weather.weatherIconName)
+        } else {
+            print("nighttime")
+        }
         weatherDetailsLabel.text = "\(weather.temperature)°  L \(weather.low)°  H \(weather.high)°"
         weatherBlurb.text = weatherDict[weather.weatherIconName]
-        
+    }
+    
+    func dayOrNight() -> String {
+        let now = Date()
+        let calculator = EDSunriseSet(timezone: NSTimeZone.local, latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+        calculator!.calculateSunriseSunset(now as Date!)
+        let sunrise = calculator!.sunrise!
+        let sunset = calculator!.sunset!
+        if now >= sunrise && now <= sunset {
+            return "daytime"
+        } else {
+            return "nighttime"
+        }
     }
 }
 
