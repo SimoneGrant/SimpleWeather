@@ -20,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherDetailsLabel: UILabel!
     let locationManager = CLLocationManager()
     var weather = Weather()
-    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "pouring", "snow": "snow", "fog": "foggy", "strong_thunder": "thunderbolt", "sunny": "gorgeous", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
+    var weatherDict = ["thunder": "greased lightning", "light_rain": "drizzle", "showers": "pouring", "snow": "snow", "fog": "foggy", "strong_thunder": "thunderbolt", "sunny": "clear", "cloudy_day": "overcast", "severe_thunder": "thunderstruck", "heavy_snow": "snowed under"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +110,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             weatherIconView.image = UIImage(named: "fog_night")
         } else if weather.weatherIconName == "sunny" {
             weatherIconView.image = UIImage(named: "clear_night")
+        } else {
+            weatherIconView.image = UIImage(named: weather.weatherIconName)
         }
         weatherDetailsLabel.text = "\(weather.temperature)°  L \(weather.low)°  H \(weather.high)°"
         weatherBlurb.text = weatherDict[weather.weatherIconName]
@@ -133,10 +135,22 @@ extension ViewController: UISearchBarDelegate   {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != "" {
             userSearchedForNewLocation(searchBar.text!)
+            weatherBlurb.fadeTransition(0.5)
             searchBar.text = ""
         }
         DispatchQueue.main.async {
             searchBar.resignFirstResponder()
         }
+    }
+}
+
+extension UIView {
+    func fadeTransition(_ duration:CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name:
+            kCAMediaTimingFunctionEaseInEaseOut)
+        animation.type = kCATransitionFade
+        animation.duration = duration
+        layer.add(animation, forKey: kCATransitionFade)
     }
 }

@@ -21,6 +21,7 @@ struct Weather {
         case 0...300 :
             return "thunder"
         case 301...500 :
+            print("drizzle")
             return "light_rain"
         case 501...600 :
             return "showers"
