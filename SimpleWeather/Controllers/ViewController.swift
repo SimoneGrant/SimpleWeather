@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
+        animateBounce()
     }
     
     //MARK: - Setup
@@ -129,13 +130,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return "nighttime"
         }
     }
+    
+    func animateBounce() {
+        weatherIconView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.weatherIconView.transform = .identity
+            },
+                       completion: nil)
+    }
 }
 
 extension ViewController: UISearchBarDelegate   {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != "" {
             userSearchedForNewLocation(searchBar.text!)
-            weatherBlurb.fadeTransition(0.5)
+            animateBounce()
             searchBar.text = ""
         }
         DispatchQueue.main.async {
@@ -144,13 +158,3 @@ extension ViewController: UISearchBarDelegate   {
     }
 }
 
-extension UIView {
-    func fadeTransition(_ duration:CFTimeInterval) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name:
-            kCAMediaTimingFunctionEaseInEaseOut)
-        animation.type = kCATransitionFade
-        animation.duration = duration
-        layer.add(animation, forKey: kCATransitionFade)
-    }
-}
