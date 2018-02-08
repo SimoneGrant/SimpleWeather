@@ -137,7 +137,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                        delay: 0,
                        usingSpringWithDamping: 0.2,
                        initialSpringVelocity: 6.0,
-                       options: .allowUserInteraction,
+                       options: .transitionCrossDissolve,
                        animations: { [weak self] in
                         self?.weatherIconView.transform = .identity
             },
